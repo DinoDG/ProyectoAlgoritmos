@@ -39,3 +39,11 @@ def Estado_Asientos():
   print("|","|",sep="\t"*9)
   
   
+def Anular_Asiento(recorrido):
+  contador=0
+  for x in range(14):
+    for j in range(3):
+      contador+=1
+      if contador==recorrido:
+        columna[x][j]=contador
+        print("Asiento Anulado Exitosamente")
