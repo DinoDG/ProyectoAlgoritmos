@@ -66,3 +66,38 @@ def Anular_Asiento(recorrido):
       if contador==recorrido:
         columna[x][j]=contador
         print("Asiento Anulado Exitosamente")
+def Datos_Cliente():
+    
+  nombre=input(" ingrese su nombre para el registro y posterior compra : ")
+
+  while True:
+    try:
+      rut = int(input(" ingrese su rut, en caso de poseer dígito verificador pertenciente al (K)  reemplace por un 0 : "))
+      if len(str(rut))==9:
+        break
+      else:
+        print(" ingrese un rut de 9 digitos considerando el dígito verificador")
+    except:
+        print(" debe responder a un rut valido")
+  
+  while True:
+    try:
+      telefono = int(input(" ingrese un número de contacto  :"))
+      if len(str(telefono))==9:
+        break
+      else:
+        print(" considere que el número es inferido en el sistema (+56) ")
+    except:
+      print(" debe ingresar un número de 9 dígitos numéricos")
+
+  
+  while True:
+      try:
+        banco=int(input(" pertenece al banco duoc ?  1/si   2/no  : "))
+        if banco==1 or banco==2:
+          break
+        else:
+          print(" ingrese o 1 o 2 (opciones)")
+      except:
+        print("ingrese una opción válida")
+  return[nombre,rut,telefono,banco]
