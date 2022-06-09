@@ -70,3 +70,55 @@ while menu==1:
         total=int(total*0.85)
         print(" se aplicado un descuento de un 15% por asiento, al pertenecer al Banco Duoc")
       print("\nSu total es de:  $ ",total)
+            
+    if op==3:
+    while valido:
+      try:  
+        anulacion=int(input("Indique numero de asiento a anular: "))
+        if anulacion==asiento:
+          fn.Anular_Asiento(anulacion)
+          print("-------------------")
+          break
+        print(" ERROR: el numero de su asiento no es el anteriormente comprado o no registrado")  
+      except:
+        print("por favor verifique que los datos correspondan con lo pedido") 
+
+  if op==4:
+    while valido: 
+      try:
+        modificar=int(input("Desea modificar Datos del Cliente? (1=SI//2=NO)"))
+        if  modificar==1: 
+          res=int(input("desea cambiar 1.nombre/2.telefono o 3.ambos?")) 
+          if res==1:
+            nombreNVO=input("Ingrese nuevo nombre: ")
+            cliente[0]=nombreNVO
+            break
+          elif res==2:
+            while valido:
+              try:  
+                telefonoNVO=int(input("Ingrese nuevo telefono: "))
+                if len(str(telefonoNVO))==9:  
+                  cliente[2]=telefonoNVO
+                  break
+                print("por favor ingrese un numero valido") 
+              except:
+                print("error: siga las instrucciones correctamente")   
+          elif res==3:
+            nombreNVO=input("Ingrese nuevo nombre: ")
+            telefonoNVO=int(input("Ingrese nuevo telefono: "))
+            cliente[0]=nombreNVO
+            cliente[2]=telefonoNVO
+            break
+        elif modificar==2:
+          break    
+      except:
+        print("por favor entregue respuestas validas")
+  if op==5:
+    menu=0
+    print("Gracias por operar con VUELOS-DUOC")
+
+    
+    
+    
+    
+    
