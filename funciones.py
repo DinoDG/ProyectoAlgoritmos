@@ -1,3 +1,6 @@
+
+
+
 def Selec_Asiento(nroPedido):
   
   nroAsiento=0
